@@ -7,6 +7,8 @@ import Antd from 'ant-design-vue'
 import Viser from 'viser-vue'
 import VueCropper from 'vue-cropper'
 import 'ant-design-vue/dist/antd.less'
+// 修改antd样式的 务必放在antd.less之后，否则不生效
+import '@/global.less'
 
 // ext library
 import VueClipboard from 'vue-clipboard2'
