@@ -1,7 +1,7 @@
 <template>
   <div :style="{ padding: '0 0 32px 32px' }">
     <h3 class="chart-title" :style="{ marginBottom: '20px' }">{{ title }}</h3>
-    <v-chart :height="height" :width="width" :data="data" :forceFit="true" :padding="padding">
+    <v-chart :height="height" :data="data" :forceFit="true" :padding="padding">
       <v-coord type="rect" :direction="direction" />
       <v-tooltip />
       <v-axis />
@@ -21,10 +21,6 @@ export default {
     height: {
       type: Number,
       default: 254
-    },
-    width: {
-      type: Number,
-      required: false
     },
     direction: {
       type: String,
@@ -72,7 +68,7 @@ export default {
       }
     }
   },
-  data() {
+  data () {
     return {}
   }
 }

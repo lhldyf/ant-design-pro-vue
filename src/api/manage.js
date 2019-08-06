@@ -61,7 +61,7 @@ export function saveService (parameter) {
   })
 }
 
-export function postAction(url, parameter) {
+export function postAction (url, parameter) {
   return axios({
     url: url,
     method: 'post',
@@ -69,7 +69,7 @@ export function postAction(url, parameter) {
   })
 }
 
-export function getAction(url, parameter) {
+export function getAction (url, parameter) {
   return axios({
     url: url,
     method: 'get',

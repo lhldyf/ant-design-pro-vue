@@ -56,7 +56,7 @@ export default {
       default: 254
     }
   },
-  data() {
+  data () {
     return {
       adjust: [
         {
@@ -67,7 +67,7 @@ export default {
     }
   },
   computed: {
-    data() {
+    data () {
       const dv = new DataSet.View().source(this.dataSource)
       dv.transform({
         type: 'fold',
