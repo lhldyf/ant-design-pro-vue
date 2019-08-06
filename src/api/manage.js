@@ -60,3 +60,19 @@ export function saveService (parameter) {
     data: parameter
   })
 }
+
+export function postAction(url, parameter) {
+  return axios({
+    url: url,
+    method: 'post',
+    data: parameter
+  })
+}
+
+export function getAction(url, parameter) {
+  return axios({
+    url: url,
+    method: 'get',
+    params: parameter
+  })
+}
