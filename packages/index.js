@@ -1,6 +1,15 @@
 // 导入单个组件
 import { Bar, Ellipsis, FooterToolbar } from '@/components'
 import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView } from '@/layouts'
+import { postAction, getAction, deleteAction, putAction } from '@/api/manage'
+import { VueAxios, axios } from '@/utils/request'
+import { mixin, AppDeviceEnquire, mixinDevice } from '@/utils/mixin'
+import '@/utils/filter'
+
+// axios相关封装
+export { postAction, getAction, deleteAction, putAction, VueAxios, axios }
+// mixin代码
+export { mixin, AppDeviceEnquire, mixinDevice }
 
 // 以数组的结构保存组件，便于遍历
 const components = [Bar, Ellipsis, FooterToolbar, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]

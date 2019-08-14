@@ -76,3 +76,19 @@ export function getAction (url, parameter) {
     params: parameter
   })
 }
+
+export function putAction (url, parameter) {
+  return axios({
+    url: url,
+    method: 'put',
+    params: parameter
+  })
+}
+
+export function deleteAction (url, parameter) {
+  return axios({
+    url: url,
+    method: 'delete',
+    params: parameter
+  })
+}
