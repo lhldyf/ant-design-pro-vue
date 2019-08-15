@@ -7,6 +7,9 @@ import router from './router'
 import store from './store/'
 import { VueAxios } from './utils/request'
 
+// permission
+import permissionStore from '@/store/modules/permission'
+
 // mock
 import './mock'
 
@@ -14,6 +17,8 @@ import bootstrap from './core/bootstrap'
 import './core/use'
 import './permission' // permission control
 import './utils/filter' // global filter
+
+store.registerModule('permission', permissionStore)
 
 Vue.config.productionTip = false
 
