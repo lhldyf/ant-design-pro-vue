@@ -2,6 +2,7 @@ import T from 'ant-design-vue/es/table/Table'
 import get from 'lodash.get'
 
 export default {
+  name: 'STable',
   data () {
     return {
       needTotalList: [],
