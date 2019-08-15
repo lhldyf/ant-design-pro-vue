@@ -1,18 +1,26 @@
 // 导入单个组件
-import { Bar, Ellipsis, FooterToolbar } from '@/components'
+import { Bar, Ellipsis, FooterToolbar, STable } from '@/components'
 import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView } from '@/layouts'
 import { postAction, getAction, deleteAction, putAction } from '@/api/manage'
 import { VueAxios, axios } from '@/utils/request'
 import { mixin, AppDeviceEnquire, mixinDevice } from '@/utils/mixin'
 import '@/utils/filter'
+import { setDocumentTitle } from '@/utils/domUtil'
+import '@/core/directives/action'
+import bootstrap from '@/core/bootstrap'
+import store from '@/store'
+import PermissionHelper from '@/utils/helper/permission'
 
 // axios相关封装
 export { postAction, getAction, deleteAction, putAction, VueAxios, axios }
 // mixin代码
 export { mixin, AppDeviceEnquire, mixinDevice }
+// 启动配置 vuex
+export { bootstrap, store }
+export { setDocumentTitle, PermissionHelper }
 
 // 以数组的结构保存组件，便于遍历
-const components = [Bar, Ellipsis, FooterToolbar, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
+const components = [Bar, Ellipsis, FooterToolbar, STable, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
 
 // 为每个组件定义install
 components.forEach(component => {
@@ -42,6 +50,7 @@ export {
   Bar,
   Ellipsis,
   FooterToolbar,
+  STable,
   UserLayout,
   BasicLayout,
   BlankLayout,
@@ -56,6 +65,7 @@ export default {
   Bar,
   Ellipsis,
   FooterToolbar,
+  STable,
   UserLayout,
   BasicLayout,
   BlankLayout,

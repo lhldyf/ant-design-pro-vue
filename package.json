@@ -1,13 +1,15 @@
 {
   "name": "tw-vue-pro",
-  "version": "2.0.0-test.12",
+  "version": "2.0.0-test.19",
   "private": false,
   "main": "lib/tw-vue-pro.umd.min.js",
   "keywords": [
     "vue"
   ],
   "files": [
-    "lib"
+    "lib",
+    "src/store/modules/permission.js",
+    "src/store/mutation-types.js"
   ],
   "author": "lhldyf",
   "license": "MIT",
