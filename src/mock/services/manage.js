@@ -9,6 +9,7 @@ const serverList = (options) => {
   const result = []
   const pageNo = parseInt(parameters.page)
   const pageSize = parseInt(parameters.size)
+  console.log(pageNo, pageSize)
   const totalPage = Math.ceil(totalCount / pageSize)
   const key = (pageNo - 1) * pageSize
   const next = (pageNo >= totalPage ? (totalCount % pageSize) : pageSize) + 1
@@ -35,7 +36,7 @@ const serverList = (options) => {
     data: {
       list: result,
       page: {
-        current: pageNo,
+        page: pageNo,
         size: pageSize,
         total: totalCount
       }

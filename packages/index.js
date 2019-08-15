@@ -70,5 +70,6 @@ export default {
   BasicLayout,
   BlankLayout,
   RouteView,
-  PageView
+  PageView,
+  PermissionHelper
 }
