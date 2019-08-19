@@ -1,5 +1,5 @@
 // 导入单个组件
-import { Bar, Ellipsis, FooterToolbar, STable } from '@/components'
+import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable } from '@/components'
 import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView } from '@/layouts'
 import { postAction, getAction, deleteAction, putAction } from '@/api/manage'
 import { VueAxios, axios } from '@/utils/request'
@@ -47,7 +47,7 @@ export {
   // 导出的对象必须具备一个 install 方法
   install,
   // 组件列表
-  Bar,
+  Bar, Pie, BarMultid,
   Ellipsis,
   FooterToolbar,
   STable,
@@ -60,16 +60,5 @@ export {
 
 export default {
   // 导出的对象必须具备一个 install 方法
-  install,
-  // 组件列表
-  Bar,
-  Ellipsis,
-  FooterToolbar,
-  STable,
-  UserLayout,
-  BasicLayout,
-  BlankLayout,
-  RouteView,
-  PageView,
-  PermissionHelper
+  install
 }
