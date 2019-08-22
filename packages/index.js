@@ -20,7 +20,7 @@ export { bootstrap, store }
 export { setDocumentTitle, PermissionHelper }
 
 // 以数组的结构保存组件，便于遍历
-const components = [Bar, Ellipsis, FooterToolbar, STable, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
+const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
 
 // 为每个组件定义install
 components.forEach(component => {

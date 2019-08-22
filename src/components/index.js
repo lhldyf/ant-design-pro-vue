@@ -1,5 +1,7 @@
 // chart
 import Bar from '@/components/Charts/Bar'
+import Pie from '@/components/Charts/Pie'
+import BarMultid from '@/components/Charts/BarMultid'
 import ChartCard from '@/components/Charts/ChartCard'
 import Liquid from '@/components/Charts/Liquid'
 import MiniArea from '@/components/Charts/MiniArea'
@@ -32,6 +34,8 @@ import ArticleListContent from '@/components/ArticleListContent'
 export {
   AvatarList,
   Bar,
+  Pie,
+  BarMultid,
   ChartCard,
   Liquid,
   MiniArea,

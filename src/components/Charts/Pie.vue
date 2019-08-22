@@ -15,6 +15,7 @@
 const DataSet = require('@antv/data-set')
 
 export default {
+  name: 'Pie',
   props: {
     title: {
       type: String,
