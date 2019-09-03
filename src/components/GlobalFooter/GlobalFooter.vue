@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <div class="links">
+    <!-- <div class="links">
       <a
         href="https://pro.loacg.com/"
         target="_blank"
@@ -13,10 +13,10 @@
       </a>
       <a href="https://ant.design/">Ant Design</a>
       <a href="https://vue.ant.design/">Vue Antd</a>
-    </div>
+    </div> -->
     <div class="copyright">
       Copyright
-      <a-icon type="copyright" /> 2013-2019 <span>TW, All Right Reserved</span>
+      <a-icon type="copyright" /> 2013-2019 <span>Transwarp, All Right Reserved</span>
     </div>
   </div>
 </template>
