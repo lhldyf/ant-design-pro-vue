@@ -83,7 +83,7 @@ export default {
   },
   created () {
     getRoleList().then((res) => {
-      this.roles = res.result.data
+      this.roles = res.data.data
       this.roles.push({
         id: '-1',
         name: '新增角色',
@@ -144,7 +144,7 @@ export default {
     },
     loadPermissions () {
       getPermissions().then(res => {
-        const result = res.result
+        const result = res.data
         this.permissions = result.map(permission => {
           const options = actionToObject(permission.actionData)
           permission.checkedAll = false

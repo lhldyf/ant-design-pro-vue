@@ -73,7 +73,7 @@ Table 重封装组件说明
           return this.$http.get('/service', {
             params: Object.assign(parameter, this.queryParam)
           }).then(res => {
-            return res.result
+            return res.data
           })
         },
         selectedRowKeys: [],
@@ -172,7 +172,7 @@ Table 重封装组件说明
           return this.$http.get('/service', {
             params: Object.assign(parameter, this.queryParam)
           }).then(res => {
-            return res.result
+            return res.data
           })
         },
       }
@@ -273,7 +273,7 @@ result.then(r => {
 ```json
 {
   "message": "",
-  "result": {
+  "data": {
     "data": [{
         id: 1,
         cover: 'https://gw.alipayobjects.com/zos/rmsportal/WdGqmHpayyMjiEhcKoVE.png',

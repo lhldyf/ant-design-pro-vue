@@ -144,7 +144,7 @@ export default {
 
     getTeams () {
       this.$http.get('/workplace/teams').then(res => {
-        this.teams = res.result
+        this.teams = res.data
         this.teamSpinning = false
       })
     },

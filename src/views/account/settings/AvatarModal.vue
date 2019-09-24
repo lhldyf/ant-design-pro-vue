@@ -108,7 +108,7 @@ export default {
       // 转化为base64
       reader.readAsDataURL(file)
       reader.onload = () => {
-        this.options.img = reader.result
+        this.options.img = reader.data
       }
       // 转化为blob
       // reader.readAsArrayBuffer(file)

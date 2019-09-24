@@ -207,7 +207,7 @@ export default {
         return getRoleList(parameter)
           .then(res => {
             console.log('getRoleList', res)
-            return res.result
+            return res.data
           })
       },
 
