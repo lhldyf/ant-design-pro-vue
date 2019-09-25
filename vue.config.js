@@ -42,12 +42,11 @@ const vueConfig = {
       new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
     ],
     // if prod is on, add externals
-    externals: isProd() ? prodExternals : {}
+    // externals: isProd() ? prodExternals : {}
   },
 
-  chainWebpack: (config) => {
-    config.resolve.alias
-      .set('@$', resolve('src'))
+  chainWebpack: config => {
+    config.resolve.alias.set('@$', resolve('src'))
 
     const svgRule = config.module.rule('svg')
     svgRule.uses.clear()
@@ -67,12 +66,12 @@ const vueConfig = {
 
     // if prod is on
     // assets require on cdn
-    if (isProd()) {
-      config.plugin('html').tap(args => {
-        args[0].cdn = assetsCDN
-        return args
-      })
-    }
+    // if (isProd()) {
+    //   config.plugin('html').tap(args => {
+    //     args[0].cdn = assetsCDN
+    //     return args
+    //   })
+    // }
   },
 
   css: {
@@ -80,7 +79,6 @@ const vueConfig = {
       less: {
         modifyVars: {
           // less vars，customize ant design theme
-
           // 'primary-color': '#F5222D',
           // 'link-color': '#F5222D',
           // 'border-radius-base': '4px'

@@ -1,5 +1,5 @@
 // 导入单个组件
-import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable } from '@/components'
+import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab } from '@/components'
 import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView } from '@/layouts'
 import { postAction, getAction, deleteAction, putAction } from '@/api/manage'
 import { VueAxios, axios } from '@/utils/request'
@@ -20,7 +20,7 @@ export { bootstrap, store }
 export { setDocumentTitle, PermissionHelper }
 
 // 以数组的结构保存组件，便于遍历
-const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
+const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
 
 // 为每个组件定义install
 components.forEach(component => {
@@ -44,13 +44,11 @@ if (typeof window !== 'undefined' && window.Vue) {
 }
 
 export {
-  // 导出的对象必须具备一个 install 方法
-  install,
   // 组件列表
   Bar, Pie, BarMultid,
   Ellipsis,
   FooterToolbar,
-  STable,
+  STable, MultiTab,
   UserLayout,
   BasicLayout,
   BlankLayout,
