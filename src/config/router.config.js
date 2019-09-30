@@ -2,6 +2,18 @@
 import { UserLayout, BasicLayout, RouteView, BlankLayout, PageView } from '@/layouts'
 import { bxAnaalyse } from '@/core/icons'
 
+export const constantRouterComponents = {
+  BasicLayout: BasicLayout,
+  BlankLayout: BlankLayout,
+  RouteView: RouteView,
+  PageView: PageView
+}
+
+// 前端未找到页面路由（固定不用改）
+export const notFoundRouter = {
+  path: '*', redirect: '/404', hidden: true
+}
+
 export const asyncRouterMap = [
 
   {

@@ -1,6 +1,6 @@
 {
   "name": "tw-vue-pro",
-  "version": "2.0.0-test.40",
+  "version": "2.0.0-test.44",
   "private": false,
   "main": "lib/tw-vue-pro.umd.min.js",
   "keywords": [
@@ -9,6 +9,7 @@
   "files": [
     "lib",
     "src/store/modules/permission.js",
+    "src/store/modules/async-router.js",
     "src/store/mutation-types.js"
   ],
   "author": "lhldyf",
