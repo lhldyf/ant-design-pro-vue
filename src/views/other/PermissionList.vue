@@ -196,7 +196,7 @@ export default {
           params: Object.assign(parameter, this.queryParam)
         }).then(res => {
           const result = res.data
-          result.data.map(permission => {
+          result.data.list.map(permission => {
             permission.actionList = JSON.parse(permission.actionData)
             return permission
           })
