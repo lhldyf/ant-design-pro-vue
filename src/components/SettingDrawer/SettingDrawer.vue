@@ -143,6 +143,12 @@
                   <div slot="title">多页签模式</div>
                 </a-list-item-meta>
               </a-list-item>
+              <a-list-item>
+                <a-switch slot="actions" size="small" :defaultChecked="multiTabInHeader" @change="onMultiTabInHeader" />
+                <a-list-item-meta>
+                  <div slot="title">多页签置于Header</div>
+                </a-list-item-meta>
+              </a-list-item>
             </a-list>
           </div>
         </div>
@@ -215,6 +221,9 @@ export default {
     onMultiTab (checked) {
       this.$store.dispatch('ToggleMultiTab', checked)
     },
+    onMultiTabInHeader(checked) {
+      this.$store.dispatch('ToggleMultiTabInHeader', checked)
+    },
     handleMenuTheme (theme) {
       this.$store.dispatch('ToggleTheme', theme)
     },
@@ -230,6 +239,7 @@ export default {
   autoHideHeader: ${this.autoHideHeader}, //  auto hide header
   colorWeak: ${this.colorWeak},
   multiTab: ${this.multiTab},
+  multiTabInHeader: ${this.multiTabInHeader},
   production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true',
   // vue-ls options
   storageOptions: {

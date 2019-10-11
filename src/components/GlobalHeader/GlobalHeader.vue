@@ -6,9 +6,19 @@
         :class="[fixedHeader && 'ant-header-fixedHeader', sidebarOpened ? 'ant-header-side-opened' : 'ant-header-side-closed', ]"
         :style="{ padding: '0' }">
         <div v-if="mode === 'sidemenu'" class="header">
-          <a-icon v-if="device==='mobile'" class="trigger" :type="collapsed ? 'menu-fold' : 'menu-unfold'" @click="toggle"/>
-          <a-icon v-else class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggle"/>
-          <user-menu></user-menu>
+          <template v-if="multiTab && multiTabInHeader">
+            <a-icon v-if="device==='mobile'" class="trigger" :type="collapsed ? 'menu-fold' : 'menu-unfold'" @click="toggle"/>
+            <a-icon v-else class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggle"/>
+            <div style="display: flex; justify-content: space-between;width: 100%">
+              <div class="multiTabInHeader"><multi-tab v-if="multiTab"></multi-tab></div>
+              <user-menu></user-menu>
+            </div>
+          </template>
+          <template v-else>
+            <a-icon v-if="device==='mobile'" class="trigger" :type="collapsed ? 'menu-fold' : 'menu-unfold'" @click="toggle"/>
+            <a-icon v-else class="trigger" :type="collapsed ? 'menu-unfold' : 'menu-fold'" @click="toggle"/>
+            <user-menu></user-menu>
+          </template>
         </div>
         <div v-else :class="['top-nav-header-index', theme]">
           <div class="header-index-wide">
@@ -121,5 +131,12 @@ export default {
 }
 .showHeader-enter, .showHeader-leave-to {
   opacity: 0;
+}
+.multiTabInHeader .ant-pro-multi-tab {
+  margin: 11px 0px 0px -20px;
+}
+
+.user-wrapper {
+  min-width: 80px;
 }
 </style>
