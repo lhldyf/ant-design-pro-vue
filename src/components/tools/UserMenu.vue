@@ -30,6 +30,12 @@
             <span>测试</span>
           </a-menu-item>
           <a-menu-divider/> -->
+          <a-menu-item key="2">
+            <a href="javascript:;" @click="$refs.modifyPwd.show()">
+              <a-icon type="lock" />
+              <span>修改密码</span>
+            </a>
+          </a-menu-item>
           <a-menu-item key="3">
             <a href="javascript:;" @click="handleLogout">
               <a-icon type="logout" />
@@ -39,17 +45,19 @@
         </a-menu>
       </a-dropdown>
     </div>
+    <modify-password ref="modifyPwd"></modify-password>
   </div>
 </template>
 
 <script>
 import NoticeIcon from '@/components/NoticeIcon'
+import ModifyPassword from './modals/ModifyPassword'
 import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'UserMenu',
   components: {
-    NoticeIcon
+    NoticeIcon, ModifyPassword
   },
   computed: {
     ...mapGetters(['nickname', 'avatar'])
