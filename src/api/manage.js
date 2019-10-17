@@ -92,3 +92,21 @@ export function deleteAction (url, parameter) {
     params: parameter
   })
 }
+
+export function postFile (url, parameter) {
+  return axios({
+    url: url,
+    data: parameter,
+    method: 'post',
+    responseType: 'blob'
+  })
+}
+
+export function getFile (url, parameter) {
+  return axios({
+    url: url,
+    params: parameter,
+    method: 'get',
+    responseType: 'blob'
+  })
+}

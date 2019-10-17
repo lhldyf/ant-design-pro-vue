@@ -8,8 +8,8 @@ import store from './store/'
 import { VueAxios } from './utils/request'
 
 // permission
-// import permissionStore from '@/store/modules/permission'
-import permissionStore from '@/store/modules/async-router'
+import permissionStore from '@/store/modules/permission'
+// import permissionStore from '@/store/modules/async-router'
 
 // mock
 import './mock'

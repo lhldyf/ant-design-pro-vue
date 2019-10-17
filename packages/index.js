@@ -1,7 +1,7 @@
 // 导入单个组件
 import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab } from '@/components'
 import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView } from '@/layouts'
-import { postAction, getAction, deleteAction, putAction } from '@/api/manage'
+import { postAction, getAction, deleteAction, putAction, postFile, getFile } from '@/api/manage'
 import { VueAxios, axios } from '@/utils/request'
 import { mixin, AppDeviceEnquire, mixinDevice } from '@/utils/mixin'
 import '@/utils/filter'
@@ -12,7 +12,7 @@ import store from '@/store'
 import PermissionHelper from '@/utils/helper/permission'
 
 // axios相关封装
-export { postAction, getAction, deleteAction, putAction, VueAxios, axios }
+export { postAction, getAction, deleteAction, putAction, postFile, getFile, VueAxios, axios }
 // mixin代码
 export { mixin, AppDeviceEnquire, mixinDevice }
 // 启动配置 vuex
