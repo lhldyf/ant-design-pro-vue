@@ -44,7 +44,7 @@ export default {
   height: 64px;
 }
 .logo .logo-bg.logo-bg-collapsed {
-  background: url(~@/assets/logo.png) left center no-repeat;
+  // background: url(~@/assets/logo.png) left center no-repeat;
   width: 64px;
 }
 </style>
