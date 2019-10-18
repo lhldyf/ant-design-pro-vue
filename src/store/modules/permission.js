@@ -59,6 +59,10 @@ const permission = {
     SET_ROUTERS: (state, routers) => {
       state.addRouters = routers
       state.routers = constantRouterMap.concat(routers)
+    },
+    SET_ROUTERS_BY_MENUS: (state, menus) => {
+      state.addRouters = asyncRouterMap
+      state.routers = constantRouterMap.concat(asyncRouterMap)
     }
   },
   actions: {

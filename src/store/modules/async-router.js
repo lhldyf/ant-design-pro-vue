@@ -13,6 +13,11 @@ const permission = {
     SET_ROUTERS: (state, routers) => {
       state.addRouters = routers
       state.routers = constantRouterMap.concat(routers)
+    },
+    SET_ROUTERS_BY_MENUS: (state, menus) => {
+      const routers = convert2Router(menus)
+      state.addRouters = routers
+      state.routers = constantRouterMap.concat(routers)
     }
   },
   actions: {
@@ -39,22 +44,25 @@ const rootRouter = {
 
 const generatorDynamicRouter = (token) => {
   return new Promise((resolve, reject) => {
-    Vue.axios.get('/system/sysPermission/getUserPermission', { token }).then(res => {
-      const menuNav = []
-      // const childrenNav = []
-      //      后端数据, 根级树数组,  根级 PID
-      // listToTree(result, childrenNav, 0)
-      rootRouter.children = res.data
-      rootRouter.redirect = rootRouter.children && rootRouter.children[0] && rootRouter.children[0].path || '/home'
-      menuNav.push(rootRouter)
-      const routers = generator(menuNav)
-      routers.push(notFoundRouter)
-      resolve(routers)
+    Vue.axios.get('/system/permission/getUserPermission', { token }).then(res => {
+      if (res.success) {
+        resolve(convert2Router(res.data))
+      }
     }).catch(err => {
       console.error('用户菜单加载失败', err)
       resolve([])
     })
   })
+}
+
+const convert2Router = (menus) => {
+  const menuNav = []
+  rootRouter.children = menus
+  rootRouter.redirect = rootRouter.children && rootRouter.children[0] && rootRouter.children[0].path || '/home'
+  menuNav.push(rootRouter)
+  const routers = generator(menuNav)
+  routers.push(notFoundRouter)
+  return routers
 }
 
 /**

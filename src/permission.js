@@ -26,22 +26,22 @@ router.beforeEach((to, from, next) => {
         store
           .dispatch('GetInfo')
           .then(res => {
-            const roles = res.data && res.data.role
-            store.dispatch('GenerateRoutes', { roles }).then(() => {
-              // 根据roles权限生成可访问的路由表
-              // 动态添加可访问路由表
-              router.addRoutes(store.getters.addRouters)
-              const redirect = decodeURIComponent(from.query.redirect || to.path)
-              if (to.path === redirect) {
-                // hack方法 确保addRoutes已完成 ,set the replace: true so the navigation will not leave a history record
-                next({ ...to, replace: true })
-              } else {
-                // 跳转到目的路由
-                next({ path: redirect })
-              }
-            })
+            const menus = res.data && res.data.menus
+            store.commit('SET_ROUTERS_BY_MENUS', menus)
+            // 根据roles权限生成可访问的路由表
+            // 动态添加可访问路由表
+            router.addRoutes(store.getters.addRouters)
+            const redirect = decodeURIComponent(from.query.redirect || to.path)
+            if (to.path === redirect) {
+              // hack方法 确保addRoutes已完成 ,set the replace: true so the navigation will not leave a history record
+              next({ ...to, replace: true })
+            } else {
+              // 跳转到目的路由
+              next({ path: redirect })
+            }
           })
-          .catch(() => {
+          .catch((e) => {
+            console.log('登录信息解析异常', e)
             notification.error({
               message: '错误',
               description: '请求用户信息失败，请重试'
