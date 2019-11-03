@@ -74,7 +74,7 @@ const convert2Router = (menus) => {
  */
 const generator = (routerMap, parent) => {
   return routerMap.map(item => {
-    const { title, keepAlive, hiddenHeaderContent, target, icon } = item.meta || {}
+    const { title, keepAlive, hiddenHeaderContent, target, icon, params } = item.meta || {}
     let component = constantRouterComponents[item.component]
     if (!component) {
       component = () => import(`@/views/${item.component}`)
@@ -92,7 +92,7 @@ const generator = (routerMap, parent) => {
       hideChildrenInMenu: item.hideChildrenInMenu || false,
 
       // meta: 页面标题, 菜单图标, 页面权限(供指令权限用，可去掉)
-      meta: { title, keepAlive, hiddenHeaderContent, target, icon: icon || undefined }
+      meta: { title, keepAlive, hiddenHeaderContent, target, icon: icon || undefined, params }
     }
 
     // 为了防止出现后端返回结果不规范，处理有可能出现拼接出两个 反斜杠

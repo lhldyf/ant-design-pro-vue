@@ -18,7 +18,8 @@ const info = (options) => {
     'merchantCode': 'TLif2btpzg079h15bk',
     'deleted': 0,
     'roleId': 'admin',
-    'role': {}
+    'role': {},
+    'roles': ['admin']
   }
   // role
   const roleObj = {
