@@ -44,6 +44,7 @@
           </a-menu-item>
         </a-menu>
       </a-dropdown>
+      <lang-select />
     </div>
     <modify-password ref="modifyPwd"></modify-password>
   </div>
@@ -53,11 +54,12 @@
 import NoticeIcon from '@/components/NoticeIcon'
 import ModifyPassword from './modals/ModifyPassword'
 import { mapActions, mapGetters } from 'vuex'
+import LangSelect from '@/components/tools/LangSelect'
 
 export default {
   name: 'UserMenu',
   components: {
-    NoticeIcon, ModifyPassword
+    LangSelect, NoticeIcon, ModifyPassword
   },
   computed: {
     ...mapGetters(['nickname', 'avatar'])

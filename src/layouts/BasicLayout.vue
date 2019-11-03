@@ -11,7 +11,7 @@
     >
       <side-menu
         mode="inline"
-        :menus="menus"
+        :menus="mainMenu"
         :theme="navTheme"
         :collapsed="false"
         :collapsible="true"
@@ -22,7 +22,7 @@
     <side-menu
       v-else-if="isSideMenu()"
       mode="inline"
-      :menus="menus"
+      :menus="mainMenu"
       :theme="navTheme"
       :collapsed="collapsed"
       :collapsible="true"
@@ -32,7 +32,7 @@
       <!-- layout header -->
       <global-header
         :mode="layoutMode"
-        :menus="menus"
+        :menus="mainMenu"
         :theme="navTheme"
         :collapsed="collapsed"
         :device="device"
@@ -91,7 +91,11 @@ export default {
   computed: {
     ...mapState({
       // 动态主路由
-      mainMenu: state => state.permission.routers
+      // mainMenu: state => state.permission.routers
+      mainMenu (state) {
+        return state.permission.addRouters.find(item => item.path === '/').children
+      }
+
     }),
     contentPaddingLeft () {
       if (!this.fixSidebar || this.isMobile()) {
@@ -109,7 +113,7 @@ export default {
     }
   },
   created () {
-    this.menus = this.mainMenu.find(item => item.path === '/').children
+    // this.menus = this.mainMenu.find(item => item.path === '/').children
     this.collapsed = !this.sidebarOpened
   },
   mounted () {

@@ -1,10 +1,12 @@
-import Menu from 'ant-design-vue/es/menu'
-import Icon from 'ant-design-vue/es/icon'
+import { Menu, Icon } from 'ant-design-vue'
+import i18n from '@/locales'
+import { mixin } from '@/store/i18n-mixin'
 
 const { Item, SubMenu } = Menu
 
 export default {
   name: 'SMenu',
+  mixins: [mixin],
   props: {
     menu: {
       type: Array,
@@ -54,7 +56,11 @@ export default {
     },
     $route: function () {
       this.updateMenu()
+    },
+    currentLang: function () {
+      this.$forceUpdate()
     }
+
   },
   methods: {
     // select menu item
@@ -94,13 +100,17 @@ export default {
     // render
     renderItem (menu) {
       if (!menu.hidden) {
+        const localeKey = `menu.${menu.name}`
+        console.log(localeKey)
+        menu.name && i18n.te(localeKey.toLowerCase()) && (menu.meta.title = i18n.t(localeKey.toLowerCase()))
         return menu.children && !menu.hideChildrenInMenu ? this.renderSubMenu(menu) : this.renderMenuItem(menu)
       }
       return null
     },
     renderMenuItem (menu) {
       const target = menu.meta.target || null
-      const tag = target && 'a' || 'router-link'
+      // const tag = target && 'a' || 'router-link'
+      const CustomTag = target && 'a' || 'router-link'
       const props = { to: { name: menu.name } }
       const attrs = { href: menu.path, target: menu.meta.target }
 
@@ -114,12 +124,13 @@ export default {
       }
 
       return (
-        <Item {...{ key: menu.path }}>
-          <tag {...{ props, attrs }}>
+        <Menu.Item {...{ key: menu.path }}>
+          <CustomTag {...{ props, attrs }}>
             {this.renderIcon(menu.meta.icon)}
             <span>{menu.meta.title}</span>
-          </tag>
-        </Item>
+          </CustomTag>
+        </Menu.Item>
+
       )
     },
     renderSubMenu (menu) {
@@ -128,13 +139,13 @@ export default {
         menu.children.forEach(item => itemArr.push(this.renderItem(item)))
       }
       return (
-        <SubMenu {...{ key: menu.path }}>
+        <Menu.SubMenu {...{ key: menu.path }}>
           <span slot="title">
             {this.renderIcon(menu.meta.icon)}
             <span>{menu.meta.title}</span>
           </span>
           {itemArr}
-        </SubMenu>
+        </Menu.SubMenu>
       )
     },
     renderIcon (icon) {
