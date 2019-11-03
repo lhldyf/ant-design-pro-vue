@@ -1,5 +1,6 @@
 <template>
-  <div class="user-wrapper">
+  <div class="user-wrapper" style="display: flex;">
+    <span style="margin-right: 20px;">{{timeNow}}</span>
     <div class="content-box">
       <!-- <a href="https://pro.loacg.com/docs/getting-started" target="_blank">
         <span class="action">
@@ -55,6 +56,7 @@ import NoticeIcon from '@/components/NoticeIcon'
 import ModifyPassword from './modals/ModifyPassword'
 import { mapActions, mapGetters } from 'vuex'
 import LangSelect from '@/components/tools/LangSelect'
+import moment from 'moment'
 
 export default {
   name: 'UserMenu',
@@ -63,6 +65,16 @@ export default {
   },
   computed: {
     ...mapGetters(['nickname', 'avatar', 'i18nSwitch'])
+  },
+  data() {
+    return {
+      timeNow: ''
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.timeNow = moment().format('YYYY-MM-DD HH:mm:ss')
+    }, 1000)
   },
   methods: {
     ...mapActions(['Logout']),
