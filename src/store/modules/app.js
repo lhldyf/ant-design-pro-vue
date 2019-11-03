@@ -26,7 +26,8 @@ const app = {
     color: null,
     weak: false,
     multiTab: true,
-    multiTabInHeader: false
+    multiTabInHeader: false,
+    i18nSwitch: false
   },
   mutations: {
     SET_SIDEBAR_TYPE: (state, type) => {
@@ -80,6 +81,9 @@ const app = {
     TOGGLE_MULTI_TAB_IN_HEADER: (state, bool) => {
       Vue.ls.set(DEFAULT_MULTI_TAB_IN_HEADER, bool)
       state.multiTabInHeader = bool
+    },
+    TOGGLE_I18N_SWITCH: (state, bool) => {
+      state.i18nSwitch = bool
     }
   },
   actions: {

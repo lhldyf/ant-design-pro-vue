@@ -10,6 +10,7 @@ const getters = {
   userInfo: state => state.user.info,
   addRouters: state => state.permission.addRouters,
   multiTab: state => state.app.multiTab,
+  i18nSwitch: state => state.app.i18nSwitch,
   lang: state => state.i18n.lang
 }
 

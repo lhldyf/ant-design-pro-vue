@@ -44,7 +44,7 @@
           </a-menu-item>
         </a-menu>
       </a-dropdown>
-      <lang-select />
+      <lang-select v-if="i18nSwitch" />
     </div>
     <modify-password ref="modifyPwd"></modify-password>
   </div>
@@ -62,7 +62,7 @@ export default {
     LangSelect, NoticeIcon, ModifyPassword
   },
   computed: {
-    ...mapGetters(['nickname', 'avatar'])
+    ...mapGetters(['nickname', 'avatar', 'i18nSwitch'])
   },
   methods: {
     ...mapActions(['Logout']),
