@@ -1,8 +1,5 @@
 import { Menu, Icon } from 'ant-design-vue'
-import i18n from '@/locales'
 import { mixin } from '@/store/i18n-mixin'
-
-const { Item, SubMenu } = Menu
 
 export default {
   name: 'SMenu',
@@ -101,7 +98,7 @@ export default {
     renderItem (menu) {
       if (!menu.hidden) {
         const localeKey = `menu.${menu.name}`
-        menu.name && i18n.te(localeKey.toLowerCase()) && (menu.meta.title = i18n.t(localeKey.toLowerCase()))
+        menu.name && this.$te(localeKey.toLowerCase()) && (menu.meta.title = this.$t(localeKey.toLowerCase()))
         return menu.children && !menu.hideChildrenInMenu ? this.renderSubMenu(menu) : this.renderMenuItem(menu)
       }
       return null
