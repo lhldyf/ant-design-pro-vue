@@ -24,7 +24,7 @@ export default {
   colorWeak: false,
   multiTab: false,
   multiTabInHeader: false,
-  i18nSwitch: true,
+  i18nSwitch: false,
   production: process.env.NODE_ENV === 'production' && process.env.VUE_APP_PREVIEW !== 'true',
   // vue-ls options
   storageOptions: {
