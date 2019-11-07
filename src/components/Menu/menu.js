@@ -55,9 +55,9 @@ export default {
       this.updateMenu()
     },
     currentLang: function () {
+      console.log('menu see currentLang')
       this.$forceUpdate()
     }
-
   },
   methods: {
     // select menu item
@@ -98,7 +98,7 @@ export default {
     renderItem (menu) {
       if (!menu.hidden) {
         const localeKey = `menu.${menu.name}`
-        menu.name && this.$te(localeKey.toLowerCase()) && (menu.meta.title = this.$t(localeKey.toLowerCase()))
+        menu.name && this.$te(localeKey) && (menu.meta.title = this.$t(localeKey))
         return menu.children && !menu.hideChildrenInMenu ? this.renderSubMenu(menu) : this.renderMenuItem(menu)
       }
       return null
@@ -106,7 +106,7 @@ export default {
     renderMenuItem (menu) {
       const target = menu.meta.target || null
       // const tag = target && 'a' || 'router-link'
-      const CustomTag = target && 'a' || 'router-link'
+      const CustomTag = (target && 'a') || 'router-link'
       const props = { to: { name: menu.name } }
       const attrs = { href: menu.path, target: menu.meta.target }
 
@@ -126,7 +126,6 @@ export default {
             <span>{menu.meta.title}</span>
           </CustomTag>
         </Menu.Item>
-
       )
     },
     renderSubMenu (menu) {
@@ -149,10 +148,8 @@ export default {
         return null
       }
       const props = {}
-      typeof (icon) === 'object' ? props.component = icon : props.type = icon
-      return (
-        <Icon {... { props } }/>
-      )
+      typeof icon === 'object' ? (props.component = icon) : (props.type = icon)
+      return <Icon {...{ props }} />
     }
   },
 

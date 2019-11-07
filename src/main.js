@@ -34,5 +34,8 @@ new Vue({
   store,
   i18n,
   created: bootstrap,
+  mounted () {
+    Vue.ls.get('lang') && store.dispatch('SetLang', Vue.ls.get('lang'))
+  },
   render: h => h(App)
 }).$mount('#app')
