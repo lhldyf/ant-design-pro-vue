@@ -12,6 +12,7 @@ import { VueAxios } from './utils/request'
 import permissionStore from '@/store/modules/permission'
 // import permissionStore from '@/store/modules/async-router'
 import i18nStore from '@/store/modules/i18n'
+import '@/components/global.less'
 
 // mock
 // WARNING: `mockjs` NOT SUPPORT `IE` PLEASE DO NOT USE IN `production` ENV.

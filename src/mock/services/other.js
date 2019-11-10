@@ -564,7 +564,7 @@ const role = () => {
           'actionList': null,
           'dataAccess': null
         },
-  
+
         {
           'roleId': 'user',
           'permissionId': 'marketing',
@@ -602,7 +602,7 @@ const role = () => {
           'actionList': null,
           'dataAccess': null
         },
-  
+
         {
           'roleId': 'user',
           'permissionId': 'order',

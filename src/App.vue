@@ -15,13 +15,13 @@ import { mapState } from 'vuex'
 
 export default {
   mixins: [AppDeviceEnquire],
-  data() {
+  data () {
     return {}
   },
-  mounted() {},
+  mounted () {},
   computed: {
     ...mapState({
-      locale(state) {
+      locale (state) {
         if (state.i18n.lang === 'zh-CN') {
           moment.locale('zh-cn')
           return zhCN

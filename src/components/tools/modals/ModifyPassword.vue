@@ -40,7 +40,7 @@ import { postAction } from '@/api/manage'
 
 export default {
   name: 'ModifyPassword',
-  data() {
+  data () {
     return {
       title: '修改密码',
       modalWidth: 800,
@@ -93,25 +93,25 @@ export default {
     }
   },
   methods: {
-    show() {
+    show () {
       this.form.resetFields()
       this.visible = true
     },
-    handleCancel() {
+    handleCancel () {
       this.close()
     },
-    close() {
+    close () {
       this.$emit('close')
       this.visible = false
       this.disableSubmit = false
     },
-    handleOk() {
+    handleOk () {
       const that = this
       // 触发表单验证
       this.form.validateFields((err, values) => {
         if (!err) {
           that.confirmLoading = true
-          let params = Object.assign(values)
+          const params = Object.assign(values)
           postAction(this.url, params)
             .then(res => {
               if (res.success) {
@@ -128,22 +128,23 @@ export default {
         }
       })
     },
-    validateToNextPassword(rule, value, callback) {
+    validateToNextPassword (rule, value, callback) {
       const form = this.form
       if (value && this.confirmDirty) {
         form.validateFields(['confirm'], { force: true })
       }
       callback()
     },
-    compareToFirstPassword(rule, value, callback) {
+    compareToFirstPassword (rule, value, callback) {
       const form = this.form
       if (value && value !== form.getFieldValue('password')) {
+        // eslint-disable-next-line
         callback('两次输入的密码不一样！')
       } else {
         callback()
       }
     },
-    handleConfirmBlur(e) {
+    handleConfirmBlur (e) {
       const value = e.target.value
       this.confirmDirty = this.confirmDirty || !!value
     }
@@ -153,4 +154,3 @@ export default {
 
 <style scoped>
 </style>
-

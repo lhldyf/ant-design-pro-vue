@@ -10,10 +10,11 @@ function resolve (dir) {
  * check production or preview(pro.loacg.com only)
  * @returns {boolean}
  */
-function isProd () {
+// eslint-disable-next-line
+function isProd() {
   return process.env.NODE_ENV === 'production'
 }
-
+// eslint-disable-next-line
 const assetsCDN = {
   css: [],
   // https://unpkg.com/browse/vue@2.6.10/
@@ -26,6 +27,7 @@ const assetsCDN = {
 }
 
 // webpack build externals
+// eslint-disable-next-line
 const prodExternals = {
   vue: 'Vue',
   'vue-router': 'VueRouter',

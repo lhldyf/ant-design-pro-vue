@@ -1,6 +1,12 @@
 <template>
   <div class="setting-drawer" ref="settingDrawer">
-    <a-drawer width="300" placement="right" @close="onClose" :closable="false" :visible="visible" :handle="handle">
+    <a-drawer
+      width="300"
+      placement="right"
+      @close="onClose"
+      :closable="false"
+      :visible="visible"
+      :handle="handle">
       <div class="setting-drawer-index-content">
         <div :style="{ marginBottom: '24px' }">
           <h3 class="setting-drawer-index-title">整体风格设置</h3>
@@ -113,8 +119,9 @@
                 />
                 <a-list-item-meta>
                   <a-tooltip slot="title" placement="left">
-                    <template slot="title"
-                      >固定 Header 时可配置</template
+                    <template
+                      slot="title"
+                    >固定 Header 时可配置</template
                     >
                     <div :style="{ opacity: !fixedHeader ? '0.5' : '1' }">下滑时隐藏 Header</div>
                   </a-tooltip>
@@ -196,7 +203,7 @@ export default {
     SettingItem
   },
   mixins: [mixin, mixinDevice],
-  data() {
+  data () {
     return {
       visible: false,
       colorList,
@@ -204,36 +211,36 @@ export default {
     }
   },
   watch: {},
-  mounted() {
+  mounted () {
     updateTheme(this.primaryColor)
     if (this.colorWeak !== config.colorWeak) {
       updateColorWeak(this.colorWeak)
     }
   },
   methods: {
-    showDrawer() {
+    showDrawer () {
       this.visible = true
     },
-    onClose() {
+    onClose () {
       this.visible = false
     },
-    toggle() {
+    toggle () {
       this.visible = !this.visible
     },
-    onColorWeak(checked) {
+    onColorWeak (checked) {
       this.$store.dispatch('ToggleWeak', checked)
       updateColorWeak(checked)
     },
-    onMultiTab(checked) {
+    onMultiTab (checked) {
       this.$store.dispatch('ToggleMultiTab', checked)
     },
-    onMultiTabInHeader(checked) {
+    onMultiTabInHeader (checked) {
       this.$store.dispatch('ToggleMultiTabInHeader', checked)
     },
-    handleMenuTheme(theme) {
+    handleMenuTheme (theme) {
       this.$store.dispatch('ToggleTheme', theme)
     },
-    doCopy() {
+    doCopy () {
       // get current settings from mixin or this.$store.state.app, pay attention to the property name
       const text = `export default {
   primaryColor: '${this.primaryColor}', // primary color of ant design
@@ -264,27 +271,27 @@ export default {
           this.$message.error('复制失败')
         })
     },
-    handleLayout(mode) {
+    handleLayout (mode) {
       this.$store.dispatch('ToggleLayoutMode', mode)
       // 因为顶部菜单不能固定左侧菜单栏，所以强制关闭
       this.handleFixSiderbar(false)
     },
-    handleContentWidthChange(type) {
+    handleContentWidthChange (type) {
       this.$store.dispatch('ToggleContentWidth', type)
     },
-    changeColor(color) {
+    changeColor (color) {
       if (this.primaryColor !== color) {
         this.$store.dispatch('ToggleColor', color)
         updateTheme(color)
       }
     },
-    handleFixedHeader(fixed) {
+    handleFixedHeader (fixed) {
       this.$store.dispatch('ToggleFixedHeader', fixed)
     },
-    handleFixedHeaderHidden(autoHidden) {
+    handleFixedHeaderHidden (autoHidden) {
       this.$store.dispatch('ToggleFixedHeaderHidden', autoHidden)
     },
-    handleFixSiderbar(fixed) {
+    handleFixSiderbar (fixed) {
       if (this.layoutMode === 'topmenu') {
         this.$store.dispatch('ToggleFixSiderbar', false)
         return

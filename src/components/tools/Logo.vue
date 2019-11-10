@@ -1,7 +1,7 @@
 <template>
   <div class="logo">
     <router-link :to="{ path: '/' }">
-      <div class="logo-bg" v-bind:class="{'logo-bg-collapsed': collapsed}"></div>
+      <div class="logo-bg" :class="{'logo-bg-collapsed': collapsed}"></div>
       <!-- <img src="~@/assets/logo-long.png" class="logo" alt="logo" /> -->
       <!-- <LogoSvg alt="logo" /> -->
       <!-- <h1 v-if="showTitle">{{ title }}</h1> -->

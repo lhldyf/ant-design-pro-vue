@@ -1,6 +1,6 @@
 <template>
   <div class="user-wrapper" style="display: flex;">
-    <span style="margin-right: 20px;">{{timeNow}}</span>
+    <span style="margin-right: 20px;">{{ timeNow }}</span>
     <div class="content-box">
       <!-- <a href="https://pro.loacg.com/docs/getting-started" target="_blank">
         <span class="action">
@@ -66,19 +66,19 @@ export default {
   computed: {
     ...mapGetters(['nickname', 'avatar', 'i18nSwitch'])
   },
-  data() {
+  data () {
     return {
       timeNow: ''
     }
   },
-  mounted() {
+  mounted () {
     setInterval(() => {
       this.timeNow = moment().format('YYYY-MM-DD HH:mm:ss')
     }, 1000)
   },
   methods: {
     ...mapActions(['Logout']),
-    handleLogout() {
+    handleLogout () {
       this.$confirm({
         title: '提示',
         content: '真的要注销登录吗 ?',
@@ -96,7 +96,7 @@ export default {
               })
             })
         },
-        onCancel() {}
+        onCancel () {}
       })
     }
   }
