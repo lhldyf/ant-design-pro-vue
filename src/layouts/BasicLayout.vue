@@ -144,9 +144,6 @@ export default {
       return left
     },
     menuSelect () {
-      if (!this.isDesktop()) {
-        this.collapsed = false
-      }
     },
     drawerClose () {
       this.collapsed = false
@@ -156,8 +153,6 @@ export default {
 </script>
 
 <style lang="less">
-@import url('../components/global.less');
-
 /*
  * The following styles are auto-applied to elements with
  * transition="page-transition" when their visibility is toggled
