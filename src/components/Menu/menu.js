@@ -96,9 +96,9 @@ export default {
 
     // render
     renderItem (menu) {
+      const localeKey = `menu.${menu.name}`
+      menu.name && this.$te(localeKey) && (menu.meta.title = this.$t(localeKey))
       if (!menu.hidden) {
-        const localeKey = `menu.${menu.name}`
-        menu.name && this.$te(localeKey) && (menu.meta.title = this.$t(localeKey))
         return menu.children && !menu.hideChildrenInMenu ? this.renderSubMenu(menu) : this.renderMenuItem(menu)
       }
       return null

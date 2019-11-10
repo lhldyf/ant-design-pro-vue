@@ -1,6 +1,6 @@
 {
   "name": "tw-vue-pro",
-  "version": "2.0.0-test.54",
+  "version": "2.0.0-test.56",
   "private": false,
   "main": "lib/tw-vue-pro.umd.min.js",
   "keywords": [
@@ -144,7 +144,8 @@
   },
   "browserslist": [
     "> 1%",
-    "last 2 versions",
+    "last 2 Firefox versions",
+    "Chrome > 33",
     "not ie <= 10"
   ],
   "collective": {
