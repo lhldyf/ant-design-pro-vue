@@ -1,17 +1,13 @@
 {
   "name": "tw-vue-pro",
-  "version": "2.1.0-test.1",
+  "version": "2.1.0-test.1.3",
   "private": false,
-  "main": "lib/tw-vue-pro.umd.min.js",
+  "main": "lib/tw-vue-pro.umd.js",
   "keywords": [
     "vue"
   ],
   "files": [
-    "lib",
-    "src/store/modules/permission.js",
-    "src/store/modules/async-router.js",
-    "src/store/modules/i18n.js",
-    "src/store/mutation-types.js"
+    "lib"
   ],
   "author": "lhldyf",
   "license": "MIT",
@@ -47,9 +43,9 @@
     "vue-ls": "^3.2.1",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.1.2",
+    "vue-svg-component-runtime": "^1.0.1",
     "vuex": "^3.1.1",
-    "wangeditor": "^3.1.1",
-    "vue-svg-component-runtime": "^1.0.1"
+    "wangeditor": "^3.1.1"
   },
   "devDependencies": {
     "@ant-design/colors": "^3.2.1",
@@ -69,10 +65,10 @@
     "eslint-plugin-vue": "^5.2.3",
     "less": "^3.0.4",
     "less-loader": "^5.0.0",
-    "vue-template-compiler": "^2.6.10",
-    "vue-svg-icon-loader": "^2.1.1",
-    "webpack-theme-color-replacer": "^1.2.17",
     "opencollective": "^1.0.3",
-    "opencollective-postinstall": "^2.0.2"
+    "opencollective-postinstall": "^2.0.2",
+    "vue-svg-icon-loader": "^2.1.1",
+    "vue-template-compiler": "^2.6.10",
+    "webpack-theme-color-replacer": "^1.2.17"
   }
 }

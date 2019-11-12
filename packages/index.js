@@ -1,15 +1,20 @@
-// 导入单个组件
-import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab } from '@/components'
-import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView } from '@/layouts'
-import { postAction, getAction, deleteAction, putAction, postFile, getFile } from '@/api/manage'
-import { VueAxios, axios } from '@/utils/request'
-import { mixin, AppDeviceEnquire, mixinDevice } from '@/utils/mixin'
+// 可重用组件，请加入到components数组以及export 中
+import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect } from '@/components'
+import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView } from '@/layouts'
+
 import '@/utils/filter'
 import { setDocumentTitle } from '@/utils/domUtil'
 import '@/core/directives/action'
 import bootstrap from '@/core/bootstrap'
 import store from '@/store'
 import PermissionHelper from '@/utils/helper/permission'
+
+// 可重用工具类，请加入到 export 中
+import { postAction, getAction, deleteAction, putAction, postFile, getFile } from '@/api/manage'
+import { VueAxios, axios } from '@/utils/request'
+import { mixin, AppDeviceEnquire, mixinDevice } from '@/utils/mixin'
+import { initDictStore, initAdvancedStore, dictItemName, getDictItems, advancedItemName } from '@/components/Dict'
+import { ModalMixin, ListMixin, FileUploadMixin } from '@/mixins'
 
 // axios相关封装
 export { postAction, getAction, deleteAction, putAction, postFile, getFile, VueAxios, axios }
@@ -18,9 +23,11 @@ export { mixin, AppDeviceEnquire, mixinDevice }
 // 启动配置 vuex
 export { bootstrap, store }
 export { setDocumentTitle, PermissionHelper }
+export { initDictStore, initAdvancedStore, dictItemName, getDictItems, advancedItemName }
+export { ModalMixin, ListMixin, FileUploadMixin }
 
 // 以数组的结构保存组件，便于遍历
-const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, BasicLayout, BlankLayout, RouteView, PageView]
+const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect]
 
 // 为每个组件定义install
 components.forEach(component => {
@@ -53,7 +60,8 @@ export {
   BasicLayout,
   BlankLayout,
   RouteView,
-  PageView
+  PageView,
+  TreeView
 }
 
 export default {

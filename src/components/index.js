@@ -30,6 +30,10 @@ import TagSelect from '@/components/TagSelect'
 import ExceptionPage from '@/components/Exception'
 import StandardFormRow from '@/components/StandardFormRow'
 import ArticleListContent from '@/components/ArticleListContent'
+import { AdvancedSelect, DictSelect, OpsSymbolSelect } from './Dict'
+import { OrganSelect, SimpleOrganSelect } from './mw'
+
+export { AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect }
 
 export {
   AvatarList,

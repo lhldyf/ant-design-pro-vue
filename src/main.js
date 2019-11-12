@@ -10,6 +10,7 @@ import { VueAxios } from './utils/request'
 
 // permission
 import permissionStore from '@/store/modules/permission'
+import codeGenStore from '@/store/modules/codeGen'
 // import permissionStore from '@/store/modules/async-router'
 import i18nStore from '@/store/modules/i18n'
 
@@ -25,6 +26,7 @@ import i18n from './locales'
 
 store.registerModule('permission', permissionStore)
 store.registerModule('i18n', i18nStore)
+store.registerModule('cg', codeGenStore)
 
 Vue.config.productionTip = false
 
