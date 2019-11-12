@@ -28,7 +28,7 @@ export default {
       placement: 'top'
     }
   },
-  props: ['formItems' ],
+  props: [ 'formItems' ],
   components: {
     FormItems
   },

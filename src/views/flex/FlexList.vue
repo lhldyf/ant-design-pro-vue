@@ -218,7 +218,7 @@ export default {
           if (selectedColumnKeysCache) {
             this.selectedColumnKeys = selectedColumnKeysCache
             this.columns = this.allColumns.filter(item => {
-              if (item.key == 'rowIndex' || item.dataIndex == 'action') {
+              if (item.key === 'rowIndex' || item.dataIndex === 'action') {
                 return true
               }
               if (selectedColumnKeysCache.includes(item.dataIndex)) {
@@ -228,7 +228,7 @@ export default {
             })
           } else {
             this.columns = this.allColumns.filter(item => {
-              if (item.key == 'rowIndex' || item.dataIndex == 'action') {
+              if (item.key === 'rowIndex' || item.dataIndex === 'action') {
                 return true
               }
               return item.defaultShow
@@ -237,7 +237,7 @@ export default {
           }
         }
       })
-      if (advancedType.length != 0) {
+      if (advancedType.length !== 0) {
         for (const item of advancedType) {
           await initAdvancedStore(item)
         }
@@ -266,7 +266,7 @@ export default {
       Vue.ls.set(this.selectedColumnKeysCacheName(), checkedValues, 7 * 24 * 60 * 60 * 1000)
       this.selectedColumnKeys = checkedValues
       const cols = this.allColumns.filter(item => {
-        if (item.key == 'rowIndex' || item.dataIndex == 'action') {
+        if (item.key === 'rowIndex' || item.dataIndex === 'action') {
           return true
         }
         if (this.selectedColumnKeys.includes(item.dataIndex)) {

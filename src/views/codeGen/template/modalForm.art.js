@@ -7,12 +7,12 @@ export const formTemplate =
 "        <a-row :gutter='48'>" + '\n' +
 '        {{each formItems formItem}}' + '\n' +
 "          <a-form-item label='{{formItem.tagName}}' :labelCol='labelCol' :wrapperCol='wrapperCol'>" + '\n' +
-"           {{if formItem.componentTpye == 'select'}}" + '\n' +
+"           {{if formItem.componentTpye === 'select'}}" + '\n' +
 "            <a-select placeholder='请选择{{formItem.tagName}}' v-decorator='['{{formItem.columnName}}', validatorRules.{{formItem.columnName}}]' :triggerChange='true' dictCode='{{formItem.componentSetting}}'>" + '\n' +
 '            </a-select>' + '\n' +
-"            {{else if formItem.componentTpye == 'textarea'}}" + '\n' +
+"            {{else if formItem.componentTpye === 'textarea'}}" + '\n' +
 "            <a-textarea placeholder ='请输入{{formItem.tagName}}' :autosize='{minRows: 2, maxRows: 4}' v-decorator='['{{formItem.columnName}}', validatorRules.{{formItem.columnName}}]'/>" + '\n' +
-"            {{else if formItem.componentTpye == 'input'}}" + '\n' +
+"            {{else if formItem.componentTpye === 'input'}}" + '\n' +
 "            <a-input placeholder ='请选择{{formItem.tagName}}' v-decorator='['{{formItem.columnName}}', validatorRules.{{formItem.columnName}}]'/>" + '\n' +
 '            {{/if}}' + '\n' +
 '          </a-form-item>' + '\n' +

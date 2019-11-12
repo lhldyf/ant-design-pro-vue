@@ -39,10 +39,10 @@
         <a-select-option key="componentTpye" value="datapicker">日期选择器</a-select-option>
       </a-select>
       <template slot="componentSetting" slot-scope="text, record">
-        <div v-if="record.componentTpye == 'select'">
+        <div v-if="record.componentTpye === 'select'">
           <a-input v-model="record.componentSetting" placeholder="输入字典code" style="width:100%" />
         </div>
-        <div v-else-if="record.componentTpye == 'input'">
+        <div v-else-if="record.componentTpye === 'input'">
           <a-input v-model="record.placeholder" placeholder="输入placeholder" style="width:100%" />
         </div>
       </template>
@@ -50,28 +50,28 @@
         slot="inForm"
         slot-scope="text, record"
         :checked="record.inForm"
-        :disabled="record.columnName == ('id' || 'ID')"
+        :disabled="record.columnName === ('id' || 'ID')"
         @change="handleSelectChange(record.key, 'inForm')"
       />
       <a-checkbox
         slot="inQuery"
         slot-scope="text, record"
         :checked="record.inQuery"
-        :disabled="record.columnName == ('id' || 'ID')"
+        :disabled="record.columnName === ('id' || 'ID')"
         @change="handleSelectChange(record.key, 'inQuery')"
       />
       <a-checkbox
         slot="inTable"
         slot-scope="text, record"
         :checked="record.inTable"
-        :disabled="record.columnName == ('id' || 'ID')"
+        :disabled="record.columnName === ('id' || 'ID')"
         @change="handleSelectChange(record.key, 'inTable')"
       />
       <a-checkbox
         slot="inUpdate"
         slot-scope="text, record"
         :checked="record.inUpdate"
-        :disabled="record.columnName == ('id' || 'ID')"
+        :disabled="record.columnName === ('id' || 'ID')"
         @change="handleSelectChange(record.key, 'inUpdate')"
       />
     </a-table>
@@ -237,12 +237,12 @@ export default {
               vm.$set(cur, 'componentTpye', 'input')
               vm.$set(cur, 'componentSetting', '')
               vm.$set(cur, 'placeholder', '请输入' + title)
-              const defaultChecked = codeName == ('id' || 'ID')
+              const defaultChecked = codeName === ('id' || 'ID')
               vm.$set(cur, 'inForm', defaultChecked) // 当前字段是否在新增表单中
               vm.$set(cur, 'inQuery', defaultChecked) // 当前字段是否在查询表单中
               vm.$set(cur, 'inTable', defaultChecked) // 当前字段是否在查询列表中
               vm.$set(cur, 'inUpdate', defaultChecked) // 当前字段是否在更新列表中
-              if (cur.columnType == 'text') {
+              if (cur.columnType === 'text') {
                 vm.$set(cur, 'scopedSlots', {
                   customRender: codeName
                 })
@@ -265,7 +265,7 @@ export default {
     },
     allSelected (checkAttr) {
       this.data.forEach(element => {
-        if (element.columnName != ('id' || 'ID')) {
+        if (element.columnName !== ('id' || 'ID')) {
           element[checkAttr] = window.event.target.checked
         }
       })

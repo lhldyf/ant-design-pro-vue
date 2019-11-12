@@ -24,7 +24,7 @@
             v-if="record.editable"
             class="t-input"
             v-model="record.componentSetting"
-            :placeholder="(record.componentTpye == 'select' && '请输入字典名') || '控件设置'"
+            :placeholder="(record.componentTpye === 'select' && '请输入字典名') || '控件设置'"
           />
           <template v-else>{{ text }}</template>
         </template>
@@ -176,6 +176,7 @@ export default {
       script.text = formTemplate
       console.log(script)
       document.getElementsByTagName('head')[0].appendChild(script)
+      // eslint-disable-next-line
       const html = template('temp1', {
         // ./template/modalForm.art
         frontendEntityName: this.frontendEntityName,

@@ -98,7 +98,7 @@
         <div>
           <a-textarea :value="getRouteInfo('query')" autosize style="width:48%;margin:5px" />
           <a-textarea
-            v-if="$store.state.cg.columnsInForm.length > 0 && createFormType == 'ROUTER'"
+            v-if="$store.state.cg.columnsInForm.length > 0 && createFormType === 'ROUTER'"
             :value="getRouteInfo('create')"
             autosize
             style="width:48%;margin:5px"
@@ -120,6 +120,8 @@
 </template>
 
 <script>
+/* eslint-disable */
+
 import DragForm from './Draggable/DragForm'
 import DragTable from './Draggable/DragTable'
 import FormPreview from './Drawer/FormPreview'
@@ -208,9 +210,9 @@ export default {
       return function (mode) {
         if (this.frontendFileConfig.moduleName && this.frontendFileConfig.entityName) {
           const hump = this.firstUppercase(this.frontendFileConfig.entityName)
-          if (mode == 'query') {
+          if (mode === 'query') {
             return hump + 'List'
-          } else if (mode == 'create') {
+          } else if (mode === 'create') {
             return hump + 'Modal'
           }
         } else {
@@ -222,10 +224,10 @@ export default {
       return function (mode) {
         let title = ''
         let url = ''
-        if (mode == 'create') {
+        if (mode === 'create') {
           title = '新建'
           url = 'create'
-        } else if (mode == 'query') {
+        } else if (mode === 'query') {
           title = 'xxx列表'
           url = 'list'
         }

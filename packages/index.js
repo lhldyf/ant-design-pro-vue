@@ -16,6 +16,14 @@ import { mixin, AppDeviceEnquire, mixinDevice } from '@/utils/mixin'
 import { initDictStore, initAdvancedStore, dictItemName, getDictItems, advancedItemName } from '@/components/Dict'
 import { ModalMixin, ListMixin, FileUploadMixin } from '@/mixins'
 
+// 可复用页面，请加入到 export 中
+import { DictList } from '@/views/metadata/dict'
+import FlexList from '@/views/flex/FlexList'
+import { GenFromDatabase } from '@/views/codeGen'
+import { UserList, OrganList, RoleList, PermissionList, DepartmentList } from '@/views/system'
+
+export { DictList, FlexList, GenFromDatabase, UserList, OrganList, RoleList, PermissionList, DepartmentList }
+
 // axios相关封装
 export { postAction, getAction, deleteAction, putAction, postFile, getFile, VueAxios, axios }
 // mixin代码
@@ -27,7 +35,7 @@ export { initDictStore, initAdvancedStore, dictItemName, getDictItems, advancedI
 export { ModalMixin, ListMixin, FileUploadMixin }
 
 // 以数组的结构保存组件，便于遍历
-const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect]
+const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect, FlexList]
 
 // 为每个组件定义install
 components.forEach(component => {
@@ -61,7 +69,8 @@ export {
   BlankLayout,
   RouteView,
   PageView,
-  TreeView
+  TreeView,
+  AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect
 }
 
 export default {

@@ -120,7 +120,8 @@ export default {
         status: { rules: [{ required: true, message: '请输入按钮权限状态(0无效1有效)' }] },
         metaParams: { rules: [{ required: true, message: '请输入菜单配置json' }] }
       },
-      initFields: ['parentId', 'name', 'url', 'component', 'componentName', 'redirect', 'menuType', 'perms', 'permsType', 'sortNo', 'alwaysShow', 'icon', 'isRoute', 'isLeaf', 'keepAlive', 'hidden', 'description', 'createUser', 'createTime', 'deleted', 'ruleFlag', 'status', 'metaParams' ],
+      initFields: ['parentId', 'name', 'url', 'component', 'componentName', 'redirect', 'menuType', 'perms', 'permsType', 'sortNo', 'alwaysShow', 'icon', 'isRoute', 'isLeaf',
+        'keepAlive', 'hidden', 'description', 'createUser', 'createTime', 'deleted', 'ruleFlag', 'status', 'metaParams' ],
       url: {
         create: '/system/permission/create',
         edit: '/system/permission/update'

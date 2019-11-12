@@ -55,7 +55,7 @@
 </template>
 
 <script>
-import { ListMixin, dictItemName } from '@/components/Dict'
+import { ListMixin } from '@/components/Dict'
 import DepartmentModal from './modals/DepartmentModal'
 
 export default {

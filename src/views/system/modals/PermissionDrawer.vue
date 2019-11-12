@@ -35,7 +35,7 @@
             :hasFeedback="true"
             :required="true"
           >
-            <span slot="help">{{ validateStatus == 'error' ? '请选择上级菜单' : '&nbsp;&nbsp;' }}</span>
+            <span slot="help">{{ validateStatus === 'error' ? '请选择上级菜单' : '&nbsp;&nbsp;' }}</span>
             <a-tree-select
               style="width:100%"
               :dropdownStyle="{ maxHeight: '200px', overflow: 'auto' }"
@@ -60,7 +60,7 @@
             />
           </a-form-item>
 
-          <a-form-item v-show="localMenuType == 0" :labelCol="labelCol" :wrapperCol="wrapperCol" label="默认跳转地址">
+          <a-form-item v-show="localMenuType === 0" :labelCol="labelCol" :wrapperCol="wrapperCol" label="默认跳转地址">
             <a-input placeholder="请输入路由参数 redirect" v-decorator="['redirect', {}]" :readOnly="disableSubmit" />
           </a-form-item>
 
@@ -138,7 +138,6 @@
 
 <script>
 import Icons from './icon/Icons'
-import pick from 'lodash.pick'
 import { ModalMixin } from '@/mixins'
 import { postAction } from '@/api/manage'
 
@@ -224,8 +223,8 @@ export default {
       /* update_end author:wuxianquan date:20190908 for:编辑初始化数据 */
 
       // console.log('record.menuType', record.menuType);
-      this.show = record.menuType != 2
-      this.menuLabel = record.menuType == 2 ? '按钮/权限' : '菜单名称'
+      this.show = record.menuType !== 2
+      this.menuLabel = record.menuType === 2 ? '按钮/权限' : '菜单名称'
 
       if (this.model.parentId) {
         this.localMenuType = 1
@@ -247,7 +246,7 @@ export default {
           /* update_end author:wuxianquan date:20190908 for:获取值 */
 
           const formData = Object.assign(this.model, values)
-          if ((formData.menuType == 1 || formData.menuType == 2) && !formData.parentId) {
+          if ((formData.menuType === 1 || formData.menuType === 2) && !formData.parentId) {
             that.validateStatus = 'error'
             that.$message.error('请检查你填的类型以及信息是否正确！')
             return
@@ -281,11 +280,11 @@ export default {
     handleCancel () {
       this.close()
     },
-    validateNumber (rule, value, callback) {
+    validateNumber (rule, value, ruleCallback) {
       if (!value || new RegExp(/^[0-9]*[1-9][0-9]*$/).test(value)) {
-        callback()
+        ruleCallback()
       } else {
-        callback('请输入正整数!')
+        ruleCallback('请输入正整数!')
       }
     },
     onChangeMenuType (e) {

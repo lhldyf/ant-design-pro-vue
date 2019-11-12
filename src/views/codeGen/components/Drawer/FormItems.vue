@@ -12,9 +12,9 @@
             v-for="(element,index) in localForm"
             :key="index">
             <a-form-item :label="element.title" >
-              <a-textarea v-if="element.componentTpye == 'textarea'" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="回车换行" />
-              <a-input v-if="element.componentTpye == 'input'" />
-              <a-select v-if="element.componentTpye == 'select'" style="width:150px">
+              <a-textarea v-if="element.componentTpye === 'textarea'" :autosize="{ minRows: 2, maxRows: 4 }" placeholder="回车换行" />
+              <a-input v-if="element.componentTpye === 'input'" />
+              <a-select v-if="element.componentTpye === 'select'" style="width:150px">
                 <a-select-option v-for="(ss,index) in element.componentSetting" :key="index">{{ ss }}</a-select-option>
               </a-select>
             </a-form-item>
@@ -32,7 +32,7 @@ export default {
   // components: {
   //   draggable
   // },
-  props: ['formItems' ],
+  props: [ 'formItems' ],
   data () {
     return {
       localForm: []
