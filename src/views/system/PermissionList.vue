@@ -31,7 +31,8 @@
 </template>
 
 <script>
-import { ListMixin, dictItemName } from '@/components/Dict'
+import { dictItemName } from '@/components/Dict'
+import { ListMixin } from '@/mixins'
 import PermissionDrawer from './modals/PermissionDrawer'
 import { getAction, deleteAction } from '@/api/manage'
 
@@ -77,8 +78,10 @@ export default {
   },
   methods: {
     loadPage () {
+      console.log('loadPage')
       this.tableLoading = true
       getAction(this.url.list).then(res => {
+        console.log('fff', res)
         this.tableLoading = false
         if (res.success) {
           this.dataSource = res.data

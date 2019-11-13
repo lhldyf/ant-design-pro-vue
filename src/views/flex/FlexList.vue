@@ -122,7 +122,8 @@
 </template>
 
 <script>
-import { ListMixin, dictItemName, advancedItemName, initAdvancedStore } from '@/components/Dict'
+import { dictItemName, advancedItemName, initAdvancedStore } from '@/components/Dict'
+import { ListMixin } from '@/mixins'
 import { getAction, postAction } from '@/api/manage'
 import Vue from 'vue'
 

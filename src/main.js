@@ -28,6 +28,8 @@ store.registerModule('permission', permissionStore)
 store.registerModule('i18n', i18nStore)
 store.registerModule('cg', codeGenStore)
 
+// 是否开启国际化
+store.commit('TOGGLE_I18N_SWITCH', true)
 Vue.config.productionTip = false
 
 // mount axios Vue.$http and this.$http

@@ -66,11 +66,6 @@ export default {
     return {
       columns: [
         {
-          title: 'ID',
-          align: 'center',
-          dataIndex: 'id'
-        },
-        {
           title: '用户名',
           align: 'center',
           dataIndex: 'username'

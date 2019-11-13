@@ -337,59 +337,59 @@ export const asyncRouterMap = [
         ]
       },
       {
-        path: '/metadata',
-        name: 'metadata',
-        redirect: '/metadata/dict/list',
-        component: BlankLayout,
-        meta: { title: '元数据管理', keepAlive: true },
-        children: [
-          {
-            path: '/metadata/dict/list',
-            name: 'DictList',
-            component: () => import('@/views/metadata/dict/DictList'),
-            meta: { title: '数据字典', keepAlive: true }
-          }
-        ]
-      },
-      {
         path: '/system',
         name: 'system',
         redirect: '/system/user/list',
         component: BlankLayout,
-        meta: { title: '系统管理', keepAlive: true },
+        meta: { title: '系统管理', keepAlive: true, icon: 'setting' },
         children: [
           {
             path: '/system/user/list',
             name: 'SysUserList',
-            component: () => import('@/views/system/UserList'),
-            meta: { title: '用户管理', keepAlive: true }
+            meta: { title: '用户管理', keepAlive: true },
+            component: () => import('@/views/system/UserList')
           },
           {
             path: '/system/organ/list',
-            name: 'OrganList',
-            component: () => import('@/views/system/OrganList'),
-            meta: { title: '部门管理', keepAlive: true }
-          }
-        ]
-      },
-      {
-        path: '/codeGen',
-        name: 'codeGen',
-        redirect: '/codeGen/database',
-        component: BlankLayout,
-        meta: { title: '代码生成' },
-        children: [
-          {
-            path: '/codeGen/database',
-            name: 'GenFromDatabase',
-            meta: { title: '数据库生成' },
-            component: () => import('@/views/codeGen/GenFromDatabase')
+            name: 'SysOrganList',
+            meta: { title: '单位管理', keepAlive: true },
+            component: () => import('@/views/system/OrganList')
           },
           {
-            path: '/codeGen/page',
-            name: 'GenFromPage',
-            meta: { title: '页面自定义生成' },
-            component: () => import('@/views/codeGen/GenFromPage')
+            path: '/system/department/list',
+            name: 'SysDepartmentList',
+            meta: { title: '部门管理', keepAlive: true },
+            component: () => import('@/views/system/DepartmentList')
+          },
+          {
+            path: '/system/permission/list',
+            name: 'SysPermissionList',
+            meta: { title: '菜单管理', keepAlive: true },
+            component: () => import('@/views/system/PermissionList')
+          },
+          {
+            path: '/system/role/list',
+            name: 'SysRoleList',
+            meta: { title: '角色管理', keepAlive: true },
+            component: () => import('@/views/system/RoleList')
+          },
+          {
+            path: '/system/config/list',
+            name: 'SysConfigList',
+            meta: { title: '配置管理', keepAlive: true },
+            component: () => import('@/views/assist/SysConfigList')
+          },
+          {
+            path: '/metadata/dict/list',
+            name: 'DictList',
+            meta: { title: '数据字典', keepAlive: true },
+            component: () => import('@/views/metadata/dict/DictList')
+          },
+          {
+            path: 'system/codeGen/database',
+            name: 'GenFromDatabase',
+            meta: { title: '代码生成' },
+            component: () => import('@/views/codeGen/GenFromDatabase')
           }
         ]
       }

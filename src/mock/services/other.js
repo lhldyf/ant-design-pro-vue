@@ -817,6 +817,7 @@ const permissionNoPager = () => {
   ])
 }
 
+// eslint-disable-next-line
 const permissions = () => {
   return builder({
     data: {
@@ -976,4 +977,4 @@ const permissions = () => {
 Mock.mock(/\/org\/tree/, 'get', orgTree)
 Mock.mock(/\/role/, 'get', role)
 Mock.mock(/\/permission\/no-pager/, 'get', permissionNoPager)
-Mock.mock(/\/permission/, 'get', permissions)
+// Mock.mock(/\/permission/, 'get', permissions)

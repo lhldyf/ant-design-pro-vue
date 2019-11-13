@@ -21,8 +21,9 @@ import { DictList } from '@/views/metadata/dict'
 import FlexList from '@/views/flex/FlexList'
 import { GenFromDatabase } from '@/views/codeGen'
 import { UserList, OrganList, RoleList, PermissionList, DepartmentList } from '@/views/system'
+import { SysConfigList } from '@/views/assist'
 
-export { DictList, FlexList, GenFromDatabase, UserList, OrganList, RoleList, PermissionList, DepartmentList }
+export { DictList, FlexList, GenFromDatabase, UserList, OrganList, RoleList, PermissionList, DepartmentList, SysConfigList }
 
 // axios相关封装
 export { postAction, getAction, deleteAction, putAction, postFile, getFile, VueAxios, axios }
