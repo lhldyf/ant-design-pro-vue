@@ -173,7 +173,7 @@ export default {
 
           a {
             font-size: 14px;
-            margin-right: 10px;
+            margin-right: 20px;
           }
         }
       }
