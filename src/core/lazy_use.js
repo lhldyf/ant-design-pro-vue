@@ -5,7 +5,7 @@ import config from '@/config/defaultSettings'
 // base library
 import '@/core/lazy_lib/components_use'
 import Viser from 'viser-vue'
-
+import '@/global.less'
 // ext library
 import VueClipboard from 'vue-clipboard2'
 import MultiTab from '@/components/MultiTab'
@@ -24,3 +24,4 @@ Vue.use(VueClipboard)
 Vue.use(PermissionHelper)
 Vue.use(DictSelect)
 Vue.use(AdvancedSelect)
+

@@ -278,16 +278,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less" scoped>
-  .ant-message-notice {
-      background: #F6FFED;
-      border: 1px solid #B7EB8F;
-      border-radius: 4px;
-  }
-  .ant-message-notice-content {
-    background: #F6FFED;
-    border: 1px solid #B7EB8F;
-    border-radius: 4px;
-  }
-</style>
