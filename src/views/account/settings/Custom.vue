@@ -47,7 +47,7 @@ export default {
       <AList itemLayout="horizontal">
         <AListItem>
           <Meta>
-            <a slot="title">风格配色</a>
+            <a slot="title">风格配色</a>52C41A
             <span slot="description">
                 整体风格配色设置
             </span>

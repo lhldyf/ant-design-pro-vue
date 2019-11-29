@@ -19,7 +19,7 @@
               <div class="setting-drawer-index-item" @click="handleMenuTheme('dark')">
                 <img src="https://gw.alipayobjects.com/zos/rmsportal/LCkqqYNmvBEbokSDscrm.svg" alt="dark" />
                 <div class="setting-drawer-index-selectIcon" v-if="navTheme === 'dark'">
-                  <a-icon type="check" />
+                  <a-icon type="dark" />
                 </div>
               </div>
             </a-tooltip>
@@ -30,11 +30,12 @@
               </template>
               <div class="setting-drawer-index-item" @click="handleMenuTheme('light')">
                 <img src="https://gw.alipayobjects.com/zos/rmsportal/jpRkZQMyYRryryPNtyIC.svg" alt="light" />
-                <div class="setting-drawer-index-selectIcon" v-if="navTheme !== 'dark'">
-                  <a-icon type="check" />
+                <div class="setting-drawer-index-selectIcon" v-if="navTheme === 'light'">
+                  <a-icon type="light" />
                 </div>
               </div>
             </a-tooltip>
+
           </div>
         </div>
 

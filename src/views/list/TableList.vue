@@ -255,7 +255,7 @@ export default {
     },
     handleSub (record) {
       if (record.status !== 0) {
-        this.$message.info(`${record.no} 订阅成功`)
+        this.$message.success(`${record.no} 订阅成功`, 0)
       } else {
         this.$message.error(`${record.no} 订阅失败，规则已关闭`)
       }
@@ -278,3 +278,16 @@ export default {
   }
 }
 </script>
+
+<style lang="less" scoped>
+  .ant-message-notice {
+      background: #F6FFED;
+      border: 1px solid #B7EB8F;
+      border-radius: 4px;
+  }
+  .ant-message-notice-content {
+    background: #F6FFED;
+    border: 1px solid #B7EB8F;
+    border-radius: 4px;
+  }
+</style>
