@@ -15,6 +15,11 @@
             </a-form-item>
           </a-col>
           <a-col :md="8">
+            <a-form-item label="字典项名称" :labelCol="{ span: 6 }" :wrapperCol="{ span: 14, offset: 1 }">
+              <a-input placeholder="请输入字典项名称" v-model="queryParam.itemName"></a-input>
+            </a-form-item>
+          </a-col>
+          <a-col :md="8">
             <span class="table-page-search-submitButtons">
               <a-button type="primary" @click="handleSearch()" icon="search">查询</a-button>
               <a-button type="primary" @click="handleReset()" icon="reload">重置</a-button>
@@ -52,12 +57,12 @@
       >
         <span slot="action" slot-scope="text, record">
           <a @click="handleEdit(record)">
-            <a-icon type="edit" />
+            <a-icon type="edit"/>
             编辑
           </a>
-          <a-divider type="vertical" />
-          <a @click="editDictItem(record)"><a-icon type="setting" /> 字典配置</a>
-          <a-divider type="vertical" />
+          <a-divider type="vertical"/>
+          <a @click="editDictItem(record)"><a-icon type="setting"/> 字典配置</a>
+          <a-divider type="vertical"/>
           <a-popconfirm title="确定删除吗?" @confirm="() => handleDelete(record.id)">
             <a>删除</a>
           </a-popconfirm>
@@ -116,6 +121,14 @@ export default {
     // 编辑字典数据
     editDictItem (record) {
       this.$refs.dictItemList.edit(record)
+    },
+    wrapListQueryParams (params) {
+      const keys = Object.keys(params)
+      for (const key of keys) {
+        if (params[key] === '') {
+          params[key] = null
+        }
+      }
     }
   }
 }
