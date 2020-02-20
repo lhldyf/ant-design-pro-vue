@@ -1,6 +1,6 @@
 // 可重用组件，请加入到components数组以及export 中
 import { Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect } from '@/components'
-import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView, WorkspaceLayout } from '@/layouts'
+import { UserLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView, GlobalWorkspace } from '@/layouts'
 
 import '@/utils/filter'
 import { setDocumentTitle } from '@/utils/domUtil'
@@ -36,7 +36,7 @@ export { initDictStore, initAdvancedStore, dictItemName, getDictItems, advancedI
 export { ModalMixin, ListMixin, FileUploadMixin }
 
 // 以数组的结构保存组件，便于遍历
-const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, WorkspaceLayout, BasicLayout, BlankLayout, RouteView, PageView, TreeView, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect, FlexList]
+const components = [Bar, Pie, BarMultid, Ellipsis, FooterToolbar, STable, MultiTab, UserLayout, GlobalWorkspace, BasicLayout, BlankLayout, RouteView, PageView, TreeView, AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect, FlexList]
 
 // 为每个组件定义install
 components.forEach(component => {
@@ -71,7 +71,7 @@ export {
   RouteView,
   PageView,
   TreeView,
-  WorkspaceLayout,
+  GlobalWorkspace,
   AdvancedSelect, DictSelect, OpsSymbolSelect, OrganSelect, SimpleOrganSelect
 }
 

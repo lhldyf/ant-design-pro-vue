@@ -59,9 +59,9 @@
 </template>
 
 <script>
-import UserMenu from '../tools/UserMenu'
-import SMenu from '../Menu/'
-import Logo from '../tools/Logo'
+import UserMenu from '@/components/tools/UserMenu'
+import SMenu from '@/components/Menu/'
+import Logo from '@/components/tools/Logo'
 import { mixin } from '@/utils/mixin'
 import AddCard from './AddCard'
 
