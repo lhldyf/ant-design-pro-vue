@@ -1,14 +1,14 @@
 <template>
   <a-layout :class="['layout', device]">
     <!-- SideMenu -->
-    <a-drawer
-      v-if="isMobile()"
-      placement="left"
-      :wrapClassName="`drawer-sider ${navTheme}`"
-      :closable="false"
-      :visible="collapsed"
-      @close="drawerClose"
-    >
+<!--    <a-drawer-->
+<!--      v-if="isMobile()"-->
+<!--      placement="left"-->
+<!--      :wrapClassName="`drawer-sider ${navTheme}`"-->
+<!--      :closable="false"-->
+<!--      :visible="collapsed"-->
+<!--      @close="drawerClose"-->
+<!--    >-->
 <!--      <side-menu-->
 <!--        mode="inline"-->
 <!--        :menus="mainMenu"-->
@@ -28,23 +28,47 @@
 <!--      :collapsible="true"-->
 <!--    ></side-menu>-->
 
-    <a-layout :class="[layoutMode, `content-width-${contentWidth}`]" :style="{ paddingLeft: contentPaddingLeft, minHeight: '100vh' }">
       <!-- layout header -->
-      <global-workspace
-        :mode="layoutMode"
-        :menus="mainMenu"
-        :theme="navTheme"
-        :collapsed="collapsed"
-        :device="device"
-        @toggle="toggle"
-      />
+<!--      <global-workspace-->
+<!--        :mode="layoutMode"-->
+<!--        :menus="mainMenu"-->
+<!--        :theme="navTheme"-->
+<!--        :collapsed="collapsed"-->
+<!--        :device="device"-->
+<!--        @toggle="toggle"-->
+<!--      />-->
 
+      <a-layout-header>
+        <a-menu
+          theme="dark"
+          mode="horizontal"
+          :defaultSelectedKeys="['2']"
+          :style="{ lineHeight: '64px'}"
+        >
+          <a-menu-item key="1">工作区</a-menu-item>
+          <a-sub-menu key="2">
+            <span slot="title"><span>系统管理</span></span>
+            <a-menu-item key="3"><router-link :to="{ name: 'EventList' }">机构管理</router-link></a-menu-item>
+            <a-menu-item key="4"><router-link :to="{ name: 'UserList' }">用户管理</router-link></a-menu-item>
+            <a-menu-item key="5"><router-link :to="{ name: 'RoleList' }">角色管理</router-link></a-menu-item>
+            <a-menu-item key="6"><router-link :to="{ name: 'UserList' }">系统运行参数</router-link></a-menu-item>
+          </a-sub-menu>
+          <!--        <a-menu-item key="3">公共配置维护</a-menu-item>-->
+          <a-sub-menu key="3">
+            <span slot="title"><span>公共配置维护</span></span>
+            <a-menu-item key="7"><router-link :to="{ name: 'DictList' }">公共数据字典</router-link></a-menu-item>
+            <a-menu-item key="8"><router-link :to="{ name: 'FunctionList' }">公共函数库</router-link></a-menu-item>
+          </a-sub-menu>
+          <a-icon style="right: 40px; position:absolute" type="search"></a-icon>
+          <a-icon style="right:50px; position:absolute" type="bell"></a-icon>
+          <user-menu></user-menu>
+        </a-menu>
+      </a-layout-header>
       <!-- layout content -->
-      <a-layout-content :style="{ height: '100%', margin: '20px 20px 0', paddingTop: fixedHeader ? '64px' : '0' }">
-        <multi-tab v-if="multiTab && !multiTabInHeader"></multi-tab>
-        <transition name="page-transition">
-          <route-view />
-        </transition>
+      <a-layout-content style="padding: 0 50px">
+
+        <route-view></route-view>
+
       </a-layout-content>
 
       <!-- layout footer -->
@@ -54,7 +78,6 @@
 
       <!-- Setting Drawer (show in development mode) -->
       <setting-drawer></setting-drawer>
-    </a-layout>
   </a-layout>
 
 </template>
@@ -73,7 +96,7 @@ import GlobalFooter from '@/components/GlobalFooter'
 import SettingDrawer from '@/components/SettingDrawer'
 
 export default {
-  name: 'BasicLayout',
+  name: 'WorkspaceLayout',
   mixins: [mixin, mixinDevice],
   components: {
     RouteView,
